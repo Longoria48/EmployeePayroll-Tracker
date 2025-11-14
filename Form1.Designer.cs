@@ -46,6 +46,11 @@
             this.EmployeeListbox = new System.Windows.Forms.ListBox();
             this.submitBtn = new System.Windows.Forms.Button();
             this.lbAlerts = new System.Windows.Forms.Label();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lbFilePath = new System.Windows.Forms.Label();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -215,7 +220,7 @@
             this.groupBox2.Controls.Add(this.tbLastName);
             this.groupBox2.Controls.Add(this.tbFirstName);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(525, 214);
+            this.groupBox2.Location = new System.Drawing.Point(551, 214);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(799, 435);
             this.groupBox2.TabIndex = 14;
@@ -228,7 +233,7 @@
             this.EmployeeListbox.FormattingEnabled = true;
             this.EmployeeListbox.HorizontalScrollbar = true;
             this.EmployeeListbox.ItemHeight = 31;
-            this.EmployeeListbox.Location = new System.Drawing.Point(19, 85);
+            this.EmployeeListbox.Location = new System.Drawing.Point(43, 87);
             this.EmployeeListbox.Name = "EmployeeListbox";
             this.EmployeeListbox.Size = new System.Drawing.Size(476, 562);
             this.EmployeeListbox.TabIndex = 15;
@@ -236,9 +241,9 @@
             // submitBtn
             // 
             this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.Location = new System.Drawing.Point(611, 685);
+            this.submitBtn.Location = new System.Drawing.Point(458, 685);
             this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(142, 60);
+            this.submitBtn.Size = new System.Drawing.Size(166, 60);
             this.submitBtn.TabIndex = 16;
             this.submitBtn.Text = "Submit";
             this.submitBtn.UseVisualStyleBackColor = true;
@@ -247,25 +252,78 @@
             // lbAlerts
             // 
             this.lbAlerts.AutoSize = true;
-            this.lbAlerts.Location = new System.Drawing.Point(792, 685);
+            this.lbAlerts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAlerts.Location = new System.Drawing.Point(663, 706);
             this.lbAlerts.Name = "lbAlerts";
-            this.lbAlerts.Size = new System.Drawing.Size(73, 25);
+            this.lbAlerts.Size = new System.Drawing.Size(92, 31);
             this.lbAlerts.TabIndex = 17;
             this.lbAlerts.Text = "Alerts:";
             this.lbAlerts.Visible = false;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.Location = new System.Drawing.Point(43, 685);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(166, 60);
+            this.btnSelect.TabIndex = 18;
+            this.btnSelect.Text = "Select File";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(231, 685);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(203, 60);
+            this.btnSave.TabIndex = 19;
+            this.btnSave.Text = "Save/Close";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // lbFilePath
+            // 
+            this.lbFilePath.AutoSize = true;
+            this.lbFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFilePath.Location = new System.Drawing.Point(225, 804);
+            this.lbFilePath.Name = "lbFilePath";
+            this.lbFilePath.Size = new System.Drawing.Size(129, 31);
+            this.lbFilePath.TabIndex = 20;
+            this.lbFilePath.Text = "File Path:";
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.Location = new System.Drawing.Point(43, 775);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(166, 60);
+            this.btnLoad.TabIndex = 21;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 949);
+            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.lbFilePath);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.lbAlerts);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.EmployeeListbox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Payroll Tracker";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -295,6 +353,11 @@
         private System.Windows.Forms.ListBox EmployeeListbox;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.Label lbAlerts;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lbFilePath;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
 
